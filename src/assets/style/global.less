@@ -1,0 +1,159 @@
+#app /deep/ .van-popup {
+  z-index: 10000 !important;
+}
+
+// #app /deep/ .van-overlay {
+//   z-index: 10000 !important;
+// }
+
+.amap-geolocation-con {
+  z-index: 1000 !important;
+}
+
+.clearfix:after {
+  content: '';
+  /*设置内容为空*/
+  height: 0;
+  /*高度为0*/
+  line-height: 0;
+  /*行高为0*/
+  display: block;
+  /*将文本转为块级元素*/
+  visibility: hidden;
+  /*将元素隐藏*/
+  clear: both;
+  /*清除浮动*/
+}
+
+.clearfix {
+  zoom: 1;
+  /*为了兼容IE*/
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+body,
+html,
+#app {
+  height: 100%;
+  width: 100%;
+  background-color: @gray-1;
+  box-sizing: border-box;
+  font-family: PingFang-SC-Bold, PingFang-SC;
+  /*解决ios上滑动不流畅*/
+  -webkit-overflow-scrolling: touch;
+  /*HTML5 元素超出部分滚动, 并隐藏滚动条*/
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  touch-action: manipulation;
+  // 禁用文本选中
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  // overflow-x: hidden;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// placeholder颜色
+input::-webkit-input-placeholder {
+  color: #999999;
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 适配火狐 */
+  color: #999999;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ 适配火狐 */
+  color: #999999;
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+  适配ie*/
+  color: #999999;
+}
+// input框在ios中的阴影问题
+input {
+  -webkit-appearance: none;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px @gray-1 inset !important;
+}
+// 光标颜色
+input {
+  caret-color: @red;
+}
+
+#app .page_container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-size: 14px;
+}
+
+// 覆盖高德地图样式 隐藏logo信息
+.amap-logo {
+  display: none !important;
+}
+.amap-copyright {
+  visibility: hidden !important;
+}
+
+// 全面屏安全底部
+.safe_bottom {
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+}
+
+// 1px方案
+
+.border-1px-bottom {
+  position: relative;
+}
+
+.border-1px-bottom:after {
+  position: absolute;
+  content: '';
+  top: -50%;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  border-bottom: 1px solid @gray-3;
+  overflow: hidden;
+}
+
+@media (-webkit-min-device-pixel-radio: 3), (min-device-pixel-radio: 3) {
+  border-1px-bottom::after {
+    -webkit-transform: scaleY(0.33333333);
+    transform: scaleY(0.33333333);
+  }
+}
+
+@media (-webkit-min-device-pixel-radio: 2), (min-device-pixel-radio: 2) {
+  border-1px-bottom::after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+/*协议前的勾选按钮*/
+.checkbox_bg {
+  background: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" style="stroke:rgb(153,153,153);stroke-width:2px" fill-opacity="0"/></svg>')
+    20px center no-repeat;
+  background-size: 16px auto;
+}
+
+.checkbox_bg.active {
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" style="stroke:rgb(254, 153, 73);stroke-width:2px" fill-opacity="0"/><circle cx="16" cy="16" r="8" style="fill:rgb(254,153,73)" stroke-width="0" /></svg>');
+}
