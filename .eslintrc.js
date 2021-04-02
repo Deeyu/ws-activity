@@ -16,6 +16,7 @@ module.exports = {
 		wx: true,
 		ws: true,
 		Activity: true,
+		TMap: true,
 	},
 	// extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/prettier'],'plugin:vue/recommended', 
 	extends: ['plugin:vue/vue3-essential','eslint:recommended', '@vue/prettier'],
@@ -32,6 +33,8 @@ module.exports = {
 		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 		'prettier/prettier': 'error',
+		'no-var': 'error',
+		'no-unused-vars': 1,
 		"no-irregular-whitespace": "off", //这禁止掉 空格报错检查
 		// "indent": ['warn', 4]
 	},

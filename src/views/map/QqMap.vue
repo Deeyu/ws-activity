@@ -9,6 +9,7 @@ export default {
 	name: 'TxMap',
 	components: {},
 	setup(props) {
+		console.log(props)
 		onMounted(() => {
 			txMapGLLoader().then(() => {
 				console.log(TMap)
@@ -35,15 +36,14 @@ export default {
 						},
 						enableHighlight: false, //是否使用高亮效果
 					},
-				})
-					.addTo(map)
-					.setData(dotData) //设置数据
+				}).addTo(map)
+				// .setData(dotData) //设置数据
 				//绑定点击事件
 				dot.on('click', evt => {
 					console.log(evt)
-					if (evt.detail.dot) {
-					} else {
-					}
+					// if (evt.detail.dot) {
+					// } else {
+					// }
 				})
 				//修改地图中心点
 				// var centerLatLng=map.getCenter();

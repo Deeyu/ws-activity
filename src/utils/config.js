@@ -14,7 +14,6 @@ export const SA_SERVER_URL = `https://sensors-datasink.wsecar.com/sa?project=${p
 
 export const MD5SING = 'DHHjTQf2ERQbw1oYXtBoqfnFeH1DcFv5Mr0f0B3vfao'
 
-
 // export const BASE_URL = process.env.VUE_APP_BASE_API
 // export const BASE_URL = process.env.VUE_APP_BASE_API_DEV
 // export const BASE_URL = process.env.VUE_APP_BASE_API_DEV1

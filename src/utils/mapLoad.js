@@ -6,7 +6,7 @@ export function txMapGLLoader() {
 		if (window.TMap) {
 			resolve(window.TMap)
 		} else {
-			var script = document.createElement('script')
+			let script = document.createElement('script')
 			script.type = 'text/javascript'
 			script.async = true
 			script.src = QQMAPGL

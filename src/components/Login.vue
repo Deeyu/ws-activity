@@ -22,7 +22,12 @@
 			>
 				<template v-slot:button>
 					<transition name="van-fade" mode="out-in">
-						<van-button v-if="!state.showTime" class="smstext" :disabled="smsDisable" @click="getSms">
+						<van-button
+							v-if="!state.showTime"
+							class="smstext"
+							:disabled="smsDisable"
+							@click="getSms"
+						>
 							{{ state.smsBtnText }}
 						</van-button>
 						<van-count-down
@@ -85,8 +90,7 @@ export default {
 		const getSms = () => {
 			state.showTime = true
 		}
-		const submit = () => {
-		}
+		const submit = () => {}
 		// ref实列可绑定到模板ref上
 		const dom = ref(null)
 		onUnmounted(() => {

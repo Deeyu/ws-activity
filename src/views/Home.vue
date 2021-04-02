@@ -16,7 +16,7 @@
 <script>
 // web components 组件 :src="require('../assets/json/test.json')"
 import lottie from 'lottie-web'
-import '@lottiefiles/lottie-player'
+require('@lottiefiles/lottie-player')
 import { onMounted } from 'vue'
 export default {
 	name: 'Home',

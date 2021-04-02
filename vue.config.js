@@ -125,7 +125,7 @@ module.exports = {
 		host: '0.0.0.0',
 		port: 8080,
 		https: false,
-		hotOnly: false, // 热更新
+		hotOnly: true, // 热更新
 		proxy: {
 			// [process.env.VUE_APP_BASE_API]: {
 			//   target: process.env.VUE_APP_BASE_URL,

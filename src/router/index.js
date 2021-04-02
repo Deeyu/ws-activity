@@ -46,6 +46,18 @@ const routes = [
 		],
 	},
 	{
+		path: '/orderList',
+		name: 'OrderList',
+		// 2.?
+		component: () => import(/* webpackChunkName: "chart" */ '@views/orderList/magic'),
+	},
+	{
+		path: '/scroll',
+		name: 'Scroll',
+		// 2.?
+		component: () => import(/* webpackChunkName: "chart" */ '@/views/orderList/scroll'),
+	},
+	{
 		path: '/activity',
 		children: [...activityRouter],
 	},
@@ -59,19 +71,19 @@ const routes = [
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
-	scrollBehavior (to, from, savedPosition) {
+	scrollBehavior(to, from, savedPosition) {
 		console.log(to, from, savedPosition)
 		// 始终滚动到顶部
-    return { top: 0 }
-    // return 期望滚动到哪个的位置
+		return { top: 0 }
+		// return 期望滚动到哪个的位置
 		// 始终在元素 #main 上方滚动 10px
-    // return {
-      // 也可以这么写
-      // el: document.getElementById('main'),
-      // el: '#main',
-      // top: -10,
-    // }
-  }
+		// return {
+		// 也可以这么写
+		// el: document.getElementById('main'),
+		// el: '#main',
+		// top: -10,
+		// }
+	},
 })
 
 // 前置守卫
@@ -79,7 +91,7 @@ const router = createRouter({
 router.beforeEach((to, form, next) => {
 	console.log(to, form)
 	// 返回 false 以取消导航
-  next()
+	next()
 })
 // 后置钩子
 router.afterEach((to, from) => {

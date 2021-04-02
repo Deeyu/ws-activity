@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import { Button, Field, List, Toast, Loading, Popup, NavBar, Dialog, Icon, Tabs, Tab } from 'vant'
 import eruda from 'eruda'
+import { post } from './utils/http'
 import 'normalize.css/normalize.css'
 import './assets/style/global.less'
 // 自定义主题不能按需加载样式 https://github.com/youzan/vant/issues/1511
@@ -17,6 +18,11 @@ app.config.isCustomElement = tag => {
 	console.log(tag === 'lottie-player')
 	return tag === 'lottie-player'
 }
+
+// 配置全局属性
+// app.config.globalProperties.$message = message;
+app.config.globalProperties.$post = post
+
 // 将 Toast 等组件注册到 app 上
 app
 	.use(Toast)
